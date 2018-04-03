@@ -1,0 +1,18 @@
+Création de la classe d’accès aux données
+
+Dans la nouvelle application, une classe d’accès aux données doit être créée, permettant les fonctionnalités classiques d’accès aux données : connexion à la base (ici ce sera la base MySQL), exécution d’une requête d’administration (insert, update, delete…), gestion d’un curseur (exécution d’une requête type select et gestion du résultat avec passage à la ligne suivante, récupération d’un champ, gestion de la fin du curseur…).
+Le but est de créer une classe réutilisable.
+
+
+Création d’une classe de gestion de dates
+
+Cette classe doit être abstraite et ne contenir que des méthodes statiques.
+Elle doit contenir au moins les méthodes suivantes :
+	- getMoisPrecedent: ne reçoit aucun paramètre et permet de retourner sous forme d’une chaîne de 2 chiffres le numéro du mois précédent par rapport à la date d’aujourd’hui (attention, il faut forcément 2 chiffres : 01 pour janvier, 10 pour octobre…) ;
+	- getMoisPrecedent : surcharge de la méthode précédente. Cette fois elle reçoit un objet de type DateTime en paramètre et retourne le mois précédent de cette date ;
+	- getMoisSuivant : suivant la même logique que les 2 méthodes précédentes, écrire les 2 méthodes pour le mois suivant ;
+	- entre : reçoit en paramètre deux numéros de jours dans le mois, et retourne vrais si la date actuelle se situe entre ces deux jours ;
+	- entre : surcharge de la méthode précédente. Cette fois un troisième paramètre est reçu de type DateTime et c’est le jour de cette date qui est testée.
+Faites en sorte que le code de la classe soit correctement optimisé (pas de redondance de code).
+Réalisez les tests unitaires pour contrôler chaque méthode (cette classe s’y prête de façon idéale).
+
